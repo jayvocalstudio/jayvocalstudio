@@ -98,10 +98,45 @@
     button:hover {
       background-color: #4b5563;
     }
-  </style>
+  
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    gap: 20px;
+  }
+  nav a {
+    font-size: 18px;
+  }
+  header {
+    flex-direction: column;
+    padding: 10px 0;
+  }
+  .overlay h1 {
+    font-size: 32px;
+  }
+  .overlay p {
+    font-size: 16px;
+  }
+  section {
+    padding: 40px 10px;
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  .slideshow {
+    height: 70vh;
+  }
+  iframe {
+    height: 300px !important;
+  }
+  .slide {
+    background-position: center center;
+  }
+}
+</style>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&amp;display=swap" rel="stylesheet"/></head>
 <body>
-
 <header>
 <nav>
 <a href="#about">JVS</a>
@@ -243,5 +278,4 @@
 </div>
 </section>
 </body>
-
 </html>
