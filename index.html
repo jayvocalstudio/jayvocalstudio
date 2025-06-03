@@ -1,356 +1,118 @@
-<!DOCTYPE html>
 
+<!DOCTYPE html>
 <html lang="ko">
 <head>
-<link href="https://fonts.googleapis.com/css2?family=Single+Day&amp;display=swap" rel="stylesheet"/>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>JAY VOCAL STUDIO</title>
-<style>
-    html { scroll-behavior: smooth; }
-    body, html {
-      font-family: 'Single Day', cursive !important;
-      font-family: 'Single Day', cursive;
-      margin: 0; padding: 0;
-      font-family: Arial, sans-serif;
-    }
-    header {
-      position: absolute; top: 0; width: 100%;
-      display: flex; justify-content: center;
-      background-color: rgba(0, 0, 0, 0.6);
-      padding: 20px 0; z-index: 10;
-    }
-    nav {
-      display: flex; gap: 50px;
-    }
-    nav a {
-      color: #fff; text-decoration: none;
-      font-size: 20px; font-weight: bold;
-      transition: color 0.3s;
-    }
-    nav a:hover {
-      color: #facc15;
-    }
-    .slideshow {
-      position: relative; width: 100%;
-      height: 100vh; overflow: hidden;
-    }
-    .slide {
-      position: absolute;
-      visibility: hidden;
-      opacity: 0;
- width: 100%; height: 100%;
-      background-size: cover; background-position: center;
-      opacity: 0; transition: opacity 1s ease-in-out;
-    }
-    .slide.active {
-      opacity: 1;
-      visibility: visible;
- z-index: 1;
-    }
-    .overlay {
-      position: absolute; top: 50%; left: 50%;
-      transform: translate(-50%, -50%);
-      text-align: center; color: white;
-      background-color: rgba(0,0,0,0.5);
-      padding: 40px; border-radius: 10px;
-      z-index: 2;
-    }
-    .overlay h1 {
-      font-size: 48px; margin: 0 0 20px;
-    }
-    .overlay p {
-      font-size: 20px;
-    }
-    section {
-      padding: 80px 20px;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-    #contact h2 {
-      text-align: center;
-    }
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-    input, textarea {
-      padding: 12px;
-      font-size: 20px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      resize: vertical;
-    }
-    textarea {
-      min-height: 150px;
-    }
-    button {
-      padding: 12px;
-      font-size: 20px;
-      background-color: #1f2937;
-      color: white;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
-    button:hover {
-      background-color: #4b5563;
-    }
-  
-@media (max-width: 768px) {
-  nav {
-    flex-direction: column;
-    gap: 20px;
-  }
-  nav a {
-    font-size: 18px;
-  }
-  header {
-    flex-direction: column;
-    padding: 10px 0;
-  }
-  .overlay h1 {
-    font-size: 32px;
-  }
-  .overlay p {
-    font-size: 16px;
-  }
-  section {
-    padding: 40px 10px;
-  }
-  img {
-    max-width: 100%;
-    height: auto;
-  }
-  .slideshow {
-    height: 70vh;
-  }
-  iframe {
-    height: 300px !important;
-  }
-  .slide {
-    background-position: center center;
-  }
-}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jay Vocal Studio</title>
+    <style>
+        body { margin: 0; font-family: Arial, sans-serif; }
+        .section { padding: 60px 20px; text-align: center; }
+        .section img { max-width: 100%; height: auto; }
+        nav { position: fixed; top: 0; width: 100%; background: #000; color: white; display: flex; justify-content: center; z-index: 9999; }
+        nav a { color: white; margin: 10px 20px; text-decoration: none; }
+        .spacer { height: 50px; }
 
-body { font-family: 'Noto Sans KR', sans-serif; }
-* { font-family: 'Noto Sans KR', sans-serif !important; }
-#about p {max-width: 800px;margin: 0 auto;font-size: 1.2rem;line-height: 2;word-break: keep-all;white-space: normal;text-align: center;}
-  list-style: disc;
-  padding-left: 0;
-  margin: 20px auto;
-  font-size: 1.2rem;
-  line-height: 2;
-  text-align: center;
-  display: table;
-  margin-left: auto;
-  margin-right: auto;
-}
-.jvs-profile {
-  text-align: center;
-  font-size: 1.2rem;
-  line-height: 2;
-  margin-top: 20px;
-}
-@media screen and (max-width: 768px) {
-  header {
-    flex-direction: column;
-    padding: 10px 0;
-  }
-  nav {
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-  }
-  .jvs-wrapper,
-  .jvs-profile,
-  #about p,
-  #class,
-  #contact,
-  #contents,
-  #faq,
-  #location {
-    padding: 0 15px !important;
-    font-size: 1rem !important;
-    text-align: center !important;
-  }
-  #class h2,
-  #contact h2,
-  #contents h2,
-  #faq h2,
-  #location h2 {
-    font-size: 1.4rem !important;
-  }
-  .jvs-profile p {
-    font-size: 1rem !important;
-  }
-  img {
-    max-width: 100% !important;
-    height: auto !important;
-  }
-  .slideshow {
-    height: 60vh;
-  }
-}
+        /* PC 전용 */
+        @media screen and (min-width: 769px) {
+            .mobile { display: none; }
+            .pc { display: block; }
+        }
 
-<style>
-/* 모바일/PC 분기 */
-.pc { display: block; }
-.mobile { display: none; }
-
-@media screen and (max-width: 768px) {
-  .pc { display: none; }
-  .mobile {
-    display: block;
-    padding: 20px;
-    font-family: 'Noto Sans KR', sans-serif;
-  }
-  .mobile-header {
-    text-align: center;
-    margin-bottom: 30px;
-  }
-  .mobile-header img {
-    width: 100%;
-    max-width: 300px;
-    border-radius: 12px;
-  }
-  .mobile-header h1 {
-    font-size: 24px;
-    margin-top: 20px;
-  }
-  .mobile-section {
-    margin-bottom: 40px;
-  }
-  .mobile-section h2 {
-    font-size: 18px;
-    margin-bottom: 10px;
-    border-bottom: 2px solid #2563eb;
-    display: inline-block;
-    padding-bottom: 5px;
-  }
-  .mobile-section p, .mobile-section ul {
-    font-size: 15px;
-    line-height: 1.6;
-    margin-top: 10px;
-  }
-  .mobile-section ul {
-    padding-left: 20px;
-  }
-}
-</style>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&amp;display=swap" rel="stylesheet"/></head>
+        /* 모바일 전용 */
+        @media screen and (max-width: 768px) {
+            .mobile { display: block; }
+            .pc { display: none; }
+        }
+    </style>
+</head>
 <body>
-<header>
-<nav>
-<a href="#about">JVS</a>
-<a href="#sls">SPEECH LEVEL SINGING</a>
-<a href="#class">CLASS</a>
-<a href="#contents">CONTENTS</a>
-<a href="#faq">FAQ</a>
-<a href="#contact">CONTACT</a>
-<a href="#location">LOCATION</a>
-</nav>
-</header>
-<div class="slideshow">
-<div class="slide active" style="background-image: url('A_professional_and_high-resolution_vocal_recording.png');"></div>
-<div class="overlay">
-<h1>JAY VOCAL STUDIO</h1>
-<p>당신의 목소리에 날개를 달다</p>
-</div>
-</div>
-<section id="about"><div style="width: 100%;"><img alt="Jay Vocal Studio 소개 이미지" src="프로필 이미지.jpg" style="width: 100%; max-width: 298px; display: block; margin: 0 auto;"/></div><div style="max-width: 600px; margin: 40px auto; font-size: 20px; line-height: 1.7; word-break: keep-all;"><div style="max-width: 500px; font-size: 20px; line-height: 1.7; word-break: keep-all;">
-</div></div><p>안녕하세요. Jay Vocal Studio 입니다. 보컬 트레이닝이라는 분야에<br/>관심을 가지고 레슨을 시작한 지도 벌써 15년이 흘렀습니다. 오랜 시간<br/>동안 많은 학생들과 유명 엔터테인먼트에 출강 중인 여러 보컬 코치들을<br/>가르치면서 쌓아온 저만의 노하우를 많은 분들과 공유하고 싶습니다.<br/><br/></p><div class="jvs-profile"><p>Speech Level Singing certified instructor Level 3</p><p>H콘서바토리 출강</p><p>제3회 카톨릭 공연예술 발성 심포지움 강연</p><p>다수의 엔터테인먼트 출강 코치들 교육</p><p>前 Vocalism 아카데미 부원장</p></div></section>
-<section id="sls" style="padding-top: 40px; padding-bottom: 80px;">
-<div style="display: flex; flex-wrap: wrap; align-items: flex-start; gap: 40px; justify-content: center; padding-top: 80px; word-break: keep-all;">
-<img alt="Speech Level Singing 인증 마크" src="sls 마크.png" style="width: 100%; max-width: 200px; margin-top: 45px;"/>
-<div style="max-width: 600px; font-size: 20px; line-height: 1.8;">
-<p>
-        세스릭스 (Seth Riggs) 는 마이클 잭슨, 스티비 원더, 루더 반드로스, 마이클 볼튼, 제임스 잉그램, 마돈나, 알 자로, 쟈넷 잭슨, 훌리오 이글레이사이스, 제니퍼 로페즈, 조쉬 그로반 외 다수의 스타들을 레슨한 세계 최고의 보컬 코치입니다.<br/><br/>
-        세스릭스는 벨칸토 발성을 재정립해서 Speech Level Singing 을 만들어냈습니다. 한국에서는 SLS 발성법 또는 세스릭스 발성법이라고 하죠 세스릭스 발성법은 불필요한 근육의 긴장 없이 마치 대화를 하는 것처럼 편한 상태로 노래할 수 있게 해주는 발성테크닉입니다. SLS 테크닉은 근육의 불필요한 긴장 없이 파싸지오 / 브릿지의 영역을 넘어서 더 높은 영역으로 연결된 소리를 만들어 줍니다. 세스릭스 발성법 / SLS발성법을 배운 가수들은 어떤 스타일의 곡이든 자유롭게 소화가 가능하며 건강한 목소리를 유지할 수 있습니다.
-      </p>
-</div>
-</div>
-</section>
-<section id="class" style="padding-top: 10px; padding-bottom: 10px;">
-<div style="max-width: 900px; margin: 0 auto;">
-<h2 style="text-align: center; font-size: 32px; margin-bottom: 40px;">CLASS</h2>
-<div style="margin-bottom: 40px;">
-<h3>🎤 발성 전문 클래스</h3>
-<p>Speech Level Singing 발성 테크닉을 기반으로, 국내 유명 음성 전문 클리닉들과의 발성 연구를 통해 가장 과학적인 보컬 트레이닝 커리큘럼을 구축했습니다. 기존에 알려진 상식을 깨는 파격적인 내용들을 모든 사람이 이해할 수 있도록 쉽고 간결하게 풀어 드립니다.</p>
-</div>
-<div style="margin-bottom: 40px;">
-<h3>🎓 보컬 트레이너 클래스</h3>
-<p>보컬 트레이너 클래스는 JVS만의 독창적인 트레이닝 매뉴얼을 기반으로 실기 수업과 이론 수업이 동시에 진행됩니다. 트레이너 클래스는 철저하게 소수 정예로 운영되고 있으며, 무분별하게 교사를 양산하는 상업적인 시스템이 아니라 진짜 실력 있는 보컬 트레이너를 양성하기 위한 교육 과정입니다.</p>
-</div>
-<div style="margin-bottom: 40px;">
-<h3>🎯 음치 교정 클래스</h3>
-<p>단순히 노래만 반복한다고 해서 음정 문제가 해결되진 않습니다. 최대한 쉬운 연습부터 시작해서 단계적으로 난이도를 높여나가야 합니다. 올바른 음을 냈을 때의 감각을 인지하고 그것을 노래로 연결하기 위한 체계적인 연습 과정이 필수입니다.</p>
-</div>
-<div>
-<h3>🎭 취미 &amp; 음성 관련 분야 클래스</h3>
-<p>취미 클래스는 좋아하는 노래를 조금 더 즐겁게 부르는 것이 목표입니다. 좋아하는 곡 또는 잘 부를 수 있는 곡 위주로 선곡을 먼저 진행하고, 좀 더 노래를 잘 부르기 위해 필요한 꿀팁들을 알려드립니다. 연기자, 아나운서, 성우 등 목소리와 관련된 직업에 종사하시는 분들 모두 레슨을 받으실 수 있습니다. 목소리의 건강을 유지하면서 목표한 바를 추구할 수 있도록 명확한 가이드라인을 제시해 드립니다.</p>
-</div>
-</div>
-</section>
-<section id="contents" style="padding-top: 10px; padding-bottom: 80px;">
-<h2 style="text-align: center;">CONTENTS</h2>
-<div style="text-align: center; margin-top: 40px;">
-<img alt="기초 발성 가이드북" src="영상강의 썸네일.png" style="max-width: 300px; height: auto; display: block; margin: 0 auto;"/>
-<p style="font-size: 1.2rem; margin-top: 20px;">&lt;기초 발성 가이드북 PDF 전자책&gt;</p>
-<p style="white-space: pre-line; font-size: 1rem;">
- 📖 이 책이 필요한 분들!
-✔ 트레이닝을 받고 있지만 도무지 실력이 늘지 않는 분
-✔ 발성을 배운 적이 없지만 체계적으로 연습하고 싶은 분
-✔ 독학으로 노래를 연습하는데 어디서부터 시작해야 할지 막막한 분
+    <nav>
+        <a href="#jvs">JVS</a>
+        <a href="#sls">SPEECH LEVEL SINGING</a>
+        <a href="#class">CLASS</a>
+        <a href="#contents">CONTENTS</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">CONTACT</a>
+        <a href="#location">LOCATION</a>
+    </nav>
 
-이 책은 필수 이론과 효과적인 연습 방법들로 구성되어 있습니다. 발성의 기초를 다지는데 많은 도움이 될 것입니다.
-        </p>
-<a href="https://www.taling.me/talent/60083" rel="noopener noreferrer" style="display: inline-block; margin-top: 15px; padding: 10px 20px; background-color: #2563eb;color: white; text-decoration: none; border-radius: 5px; font-size: 1.1rem;" target="_blank">전자책 구매 바로가기</a>
-</div>
-</section>
-<section id="contact">
-<h2>CONTACT</h2>
-<form action="https://formsubmit.co/stryper8281@naver.com" method="POST">
-<input name="name" placeholder="이름" required="" type="text"/>
-<input name="email" placeholder="답변받을 이메일" required="" type="email"/>
-<textarea name="message" placeholder="하고 싶은 말을 적어주세요" required=""></textarea>
-<input name="_captcha" type="hidden" value="false"/>
-<input name="_next" type="hidden" value="https://thankyou.page/"/>
-<button type="submit">보내기</button>
-</form>
-</section>
-<section id="location">
-<h2 style="text-align: center;">LOCATION</h2>
-<div style="display: flex; justify-content: center; margin-top: 20px;">
-<iframe allowfullscreen="" height="450" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3166.712604559159!2d126.68848057533496!3d37.46750702980134!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357b795750897541%3A0xe184537cc643553f!2z7JiB64Ko7JWE7YyM7Yq4!5e0!3m2!1sko!2skr!4v1742694693387!5m2!1sko!2skr" style="border:0; max-width: 900px;" width="100%">
-</iframe>
-</div>
-</section>
-<section id="faq" style="padding-top: 0px; padding-bottom: 100px;">
-<div style="max-width: 900px; margin: 0 auto; font-size: 18px; line-height: 1.8;">
-<h2 style="text-align: center;">FAQ</h2>
-<p><strong>Q: 음치는 어떻게 교정해야 할까요?</strong><br/>
-    A: 음정을 못 맞추는 사람은 두 부류입니다. 첫 번째는 성대의 과도한 접촉으로 고음에서 음이 떨어지는 경우, 두 번째는 음 자체를 인지하지 못하는 경우입니다. 전자는 소리를 가볍게 전환하는 연습으로 쉽게 교정 가능하지만, 후자는 녹음을 활용해 감각을 교정하는 반복 훈련이 필요합니다.</p>
-<p><strong>Q: 아무리 연습해도 고음을 내지 못하는 이유는 무엇일까요?</strong><br/>
-    A: 성대 건강 문제와 잘못된 발성 습관이 가장 큰 원인입니다. 성대 결절, 염증이 있는지 확인하고, 고음을 더 세게 내려 하기보다는 얇고 유연한 소리를 만드는 연습이 필요합니다.</p>
-<p><strong>Q: 목소리가 갈라지고 불안합니다. 어떻게 하죠?</strong><br/>
-    A: 지속적인 목소리 불안정은 성대 질환일 수 있습니다. 성대 결절이나 부종, 염증이 있다면 병원 치료가 우선이며, 그 후에 발성을 점검하는 것이 좋습니다.</p>
-<p><strong>Q: 레슨은 얼마나 받아야 할까요?</strong><br/>
-    A: 스스로 문제를 진단하고 교정할 수 있는 능력이 생길 때까지 받는 것이 좋습니다. 초기엔 자주, 이후에는 자율적 훈련 중심으로 전환하세요.</p>
-<p><strong>Q: 노래할 때 숨이 부족해서 음을 길게 끌 수가 없습니다.</strong><br/>
-    A: 폐활량보다 중요한 건 성대 접촉입니다. 성대가 제대로 붙지 않으면 공기 낭비가 커집니다. 성대 접촉을 개선하면 숨이 딸리는 문제도 해결됩니다.</p>
-</div>
-</section>
-<div class="mobile">
-<div class="mobile-header">
-<h1>JAY VOCAL STUDIO</h1>
-<p>보컬에 진심인 당신을 위한 공간</p>
-</div>
+    <div class="spacer"></div>
+    <div class="section"><img src="main.jpg" alt="Main Image"></div>
 
+    <!-- JVS -->
+    <div id="jvs" class="section">
+        <div class="pc">
+            <img src="JVS_IMG.jpg" alt="JVS 이미지">
+            <p>안녕하세요. JVS VOCAL STUDIO 입니다.</p>
+        </div>
+        <div class="mobile">
+            <p>안녕하세요. JVS VOCAL STUDIO 입니다.</p>
+        </div>
+    </div>
 
+    <!-- SLS -->
+    <div id="sls" class="section">
+        <div class="pc">
+            <img src="SLS_IMG.jpg" alt="SLS 이미지">
+            <p>세스릭스 발성법입니다.</p>
+        </div>
+        <div class="mobile">
+            <p>세스릭스 발성법입니다.</p>
+        </div>
+    </div>
 
-</div>
+    <!-- CLASS -->
+    <div id="class" class="section">
+        <div class="pc">
+            <img src="CLASS_IMG.jpg" alt="CLASS 이미지">
+            <p>클래스는 다음과 같습니다.</p>
+        </div>
+        <div class="mobile">
+            <p>클래스는 다음과 같습니다.</p>
+        </div>
+    </div>
+
+    <!-- CONTENTS -->
+    <div id="contents" class="section">
+        <div class="pc">
+            <img src="CONTENTS_IMG.jpg" alt="CONTENTS 이미지">
+            <p>컨텐츠는 다음과 같습니다.</p>
+        </div>
+        <div class="mobile">
+            <p>컨텐츠는 다음과 같습니다.</p>
+        </div>
+    </div>
+
+    <!-- FAQ -->
+    <div id="faq" class="section">
+        <div class="pc">
+            <img src="FAQ_IMG.jpg" alt="FAQ 이미지">
+            <p>FAQ 쉽게 정리해드리죠!</p>
+        </div>
+        <div class="mobile">
+            <p>FAQ 쉽게 정리해드리죠!</p>
+        </div>
+    </div>
+
+    <!-- CONTACT -->
+    <div id="contact" class="section">
+        <div class="pc">
+            <p>연락처입니다!</p>
+        </div>
+        <div class="mobile">
+            <p>연락처입니다!</p>
+        </div>
+    </div>
+
+    <!-- LOCATION -->
+    <div id="location" class="section">
+        <div class="pc">
+            <iframe src="https://www.google.com/maps?q=영남아파트&output=embed" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+        <div class="mobile">
+            <iframe src="https://www.google.com/maps?q=영남아파트&output=embed" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </div>
 </body>
 </html>
