@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jay Vocal Studio</title>
     <style>
-        body { margin: 0; font-family: Arial, sans-serif; }
-        .section { padding: 60px 20px; text-align: center; }
+        body { margin: 0; font-family: Arial, sans-serif; word-break: keep-all; }
+        .section { padding: 60px 20px; text-align: center; box-sizing: border-box; }
         .section img { max-width: 100%; height: auto; }
-        nav { position: fixed; top: 0; width: 100%; background: #000; color: white; display: flex; justify-content: center; z-index: 9999; }
-        nav a { color: white; margin: 10px 20px; text-decoration: none; }
+        nav { position: fixed; top: 0; width: 100%; background: #000; color: white; display: flex; flex-wrap: wrap; justify-content: center; z-index: 9999; }
+        nav a { color: white; margin: 10px 15px; text-decoration: none; font-size: 14px; }
         .spacer { height: 50px; }
 
         /* PC 전용 */
@@ -21,7 +21,7 @@
 
         /* 모바일 전용 */
         @media screen and (max-width: 768px) {
-            .mobile { display: block; }
+            .mobile { display: block; font-size: 16px; line-height: 1.6; padding: 20px 10px; }
             .pc { display: none; }
         }
     </style>
