@@ -194,6 +194,53 @@ body { font-family: 'Noto Sans KR', sans-serif; }
     height: 60vh;
   }
 }
+
+<style>
+/* 모바일/PC 분기 */
+.pc { display: block; }
+.mobile { display: none; }
+
+@media screen and (max-width: 768px) {
+  .pc { display: none; }
+  .mobile {
+    display: block;
+    padding: 20px;
+    font-family: 'Noto Sans KR', sans-serif;
+  }
+  .mobile-header {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  .mobile-header img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 12px;
+  }
+  .mobile-header h1 {
+    font-size: 24px;
+    margin-top: 20px;
+  }
+  .mobile-section {
+    margin-bottom: 40px;
+  }
+  .mobile-section h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #2563eb;
+    display: inline-block;
+    padding-bottom: 5px;
+  }
+  .mobile-section p, .mobile-section ul {
+    font-size: 15px;
+    line-height: 1.6;
+    margin-top: 10px;
+  }
+  .mobile-section ul {
+    padding-left: 20px;
+  }
+}
+</style>
+
 </style>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&amp;display=swap" rel="stylesheet"/></head>
 <body>
@@ -298,5 +345,34 @@ body { font-family: 'Noto Sans KR', sans-serif; }
     A: 폐활량보다 중요한 건 성대 접촉입니다. 성대가 제대로 붙지 않으면 공기 낭비가 커집니다. 성대 접촉을 개선하면 숨이 딸리는 문제도 해결됩니다.</p>
 </div>
 </section>
+
+<div class="mobile">
+  <div class="mobile-header">
+    <img src="A_professional_and_high-resolution_vocal_recording.png" alt="JVS 메인 이미지" />
+    <h1>JAY VOCAL STUDIO</h1>
+    <p>보컬에 진심인 당신을 위한 공간</p>
+  </div>
+
+  <div class="mobile-section">
+    <h2>ABOUT</h2>
+    <p>15년간의 보컬 트레이닝 노하우를 바탕으로, 모든 분들이 효과적으로 발성을 익힐 수 있도록 도와드립니다.</p>
+  </div>
+
+  <div class="mobile-section">
+    <h2>CLASS</h2>
+    <ul>
+      <li>🎤 발성 전문 클래스</li>
+      <li>🎓 보컬 트레이너 클래스</li>
+      <li>🎯 음치 교정 클래스</li>
+      <li>🎭 취미 & 음성 관련 클래스</li>
+    </ul>
+  </div>
+
+  <div class="mobile-section">
+    <h2>CONTACT</h2>
+    <p>문의: stryper8281@naver.com</p>
+  </div>
+</div>
+
 </body>
 </html>
