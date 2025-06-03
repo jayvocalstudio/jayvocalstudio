@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -5,29 +6,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jay Vocal Studio</title>
     <style>
-        body { margin: 0; font-family: Arial, sans-serif; word-break: keep-all; }
-        .section { padding: 60px 20px; text-align: center; box-sizing: border-box; }
-        .section img { max-width: 100%; height: auto; }
-        nav { position: fixed; top: 0; width: 100%; background: #000; color: white; display: flex; flex-wrap: wrap; justify-content: center; z-index: 9999; }
-        nav a { color: white; margin: 10px 15px; text-decoration: none; font-size: 14px; }
-        .spacer { height: 50px; }
-
-        /* PC 전용 */
-        @media screen and (min-width: 769px) {
-            .mobile { display: none; }
-            .pc { display: block; }
-            .pc img { width: 33%; }
+        body { margin: 0; font-family: Arial, sans-serif; }
+        header {
+            background-color: #333;
+            padding: 20px;
+            text-align: center;
         }
-
-        /* 모바일 전용 */
-        @media screen and (max-width: 768px) {
-            .mobile { display: block; font-size: 16px; line-height: 1.6; padding: 20px 10px; }
-            .pc { display: none; }
+        header a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        header a:hover {
+            text-decoration: underline;
+        }
+        .main-image {
+            width: 100%;
+            display: block;
+        }
+        section {
+            padding: 60px 20px;
+            border-bottom: 1px solid #ddd;
+            text-align: center;
         }
     </style>
+
+<style>
+  html {
+    scroll-behavior: smooth;
+  }
+</style>
 </head>
+
 <body>
-    <nav>
+
+<!-- PC 버전 메인페이지 -->
+<div class="pc">
+    <header>
         <a href="#jvs">JVS</a>
         <a href="#sls">SPEECH LEVEL SINGING</a>
         <a href="#class">CLASS</a>
@@ -35,102 +51,39 @@
         <a href="#faq">FAQ</a>
         <a href="#contact">CONTACT</a>
         <a href="#location">LOCATION</a>
-    </nav>
+    </header>
 
-    <div class="spacer"></div>
-    <div class="section"><img src="main.jpg" alt="Main Image"></div>
+    <img src="main.jpg" alt="Main Image" class="main-image">
 
-    <!-- JVS -->
-    <div id="jvs" class="section">
-        <div class="pc">
-            <img src="JVS_IMG.jpg" alt="JVS 이미지">
-            <p>안녕하세요. Jay Vocal Studio 입니다. 보컬 트레이닝이라는 분야에<br>
-            관심을 가지고 레슨을 시작한 지도 벌써 15년이 흘렀습니다. 오랜 시간<br>
-            동안 많은 학생들과 유명 엔터테인먼트에 출강 중인 여러 보컬 코치들을<br>
-            가르치면서 쌓아온 저만의 노하우를 많은 분들과 공유하고 싶습니다.<br><br>
+    <section id="jvs">
+        <h2>JVS</h2>
+        <p>텍스트 1</p>
+    </section>
+    <section id="sls">
+        <h2>SPEECH LEVEL SINGING</h2>
+        <p>텍스트 2</p>
+    </section>
+    <section id="class">
+        <h2>CLASS</h2>
+        <p>텍스트 3</p>
+    </section>
+    <section id="contents">
+        <h2>CONTENTS</h2>
+        <p>텍스트 4</p>
+    </section>
+    <section id="faq">
+        <h2>FAQ</h2>
+        <p>텍스트 5</p>
+    </section>
+    <section id="contact">
+        <h2>CONTACT</h2>
+        <p>텍스트 6</p>
+    </section>
+    <section id="location">
+        <h2>LOCATION</h2>
+        <p>텍스트 7</p>
+    </section>
+</div>
 
-            Speech Level Singing certified instructor Level 3<br>
-            H콘서바토리 출강<br>
-            제3회 카톨릭 공연예술 발성 심포지움 강연<br>
-            다수의 엔터테인먼트 출강 코치들 교육<br>
-            前 Vocalism 아카데미 부원장</p>
-        </div>
-        <div class="mobile">
-            <p>안녕하세요. Jay Vocal Studio 입니다. 보컬 트레이닝이라는 분야에<br>
-            관심을 가지고 레슨을 시작한 지도 벌써 15년이 흘렀습니다. 오랜 시간<br>
-            동안 많은 학생들과 유명 엔터테인먼트에 출강 중인 여러 보컬 코치들을<br>
-            가르치면서 쌓아온 저만의 노하우를 많은 분들과 공유하고 싶습니다.<br><br>
-
-            Speech Level Singing certified instructor Level 3<br>
-            H콘서바토리 출강<br>
-            제3회 카톨릭 공연예술 발성 심포지움 강연<br>
-            다수의 엔터테인먼트 출강 코치들 교육<br>
-            前 Vocalism 아카데미 부원장</p>
-        </div>
-    </div>
-
-    <!-- SLS -->
-    <div id="sls" class="section">
-        <div class="pc">
-            <img src="SLS_IMG.jpg" alt="SLS 이미지">
-            <p>세스릭스 발성법입니다.</p>
-        </div>
-        <div class="mobile">
-            <p>세스릭스 발성법입니다.</p>
-        </div>
-    </div>
-
-    <!-- CLASS -->
-    <div id="class" class="section">
-        <div class="pc">
-            <img src="CLASS_IMG.jpg" alt="CLASS 이미지">
-            <p>클래스는 다음과 같습니다.</p>
-        </div>
-        <div class="mobile">
-            <p>클래스는 다음과 같습니다.</p>
-        </div>
-    </div>
-
-    <!-- CONTENTS -->
-    <div id="contents" class="section">
-        <div class="pc">
-            <img src="CONTENTS_IMG.jpg" alt="CONTENTS 이미지">
-            <p>컨텐츠는 다음과 같습니다.</p>
-        </div>
-        <div class="mobile">
-            <p>컨텐츠는 다음과 같습니다.</p>
-        </div>
-    </div>
-
-    <!-- FAQ -->
-    <div id="faq" class="section">
-        <div class="pc">
-            <img src="FAQ_IMG.jpg" alt="FAQ 이미지">
-            <p>FAQ 쉽게 정리해드리죠!</p>
-        </div>
-        <div class="mobile">
-            <p>FAQ 쉽게 정리해드리죠!</p>
-        </div>
-    </div>
-
-    <!-- CONTACT -->
-    <div id="contact" class="section">
-        <div class="pc">
-            <p>연락처입니다!</p>
-        </div>
-        <div class="mobile">
-            <p>연락처입니다!</p>
-        </div>
-    </div>
-
-    <!-- LOCATION -->
-    <div id="location" class="section">
-        <div class="pc">
-            <iframe src="https://www.google.com/maps?q=영남아파트&output=embed" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-        </div>
-        <div class="mobile">
-            <iframe src="https://www.google.com/maps?q=영남아파트&output=embed" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-        </div>
-    </div>
 </body>
 </html>
